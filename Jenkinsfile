@@ -6,15 +6,15 @@ pipeline {
     PYTHON_VERSION              = 'python3.7'                               // can be python3.8, python3.9
     PIP_VERSION                 = 'pip3.7'                                  // can be pip3.8, pip3.9
     PROJECT_FOLDER              = 'migrations'                              // name of project folder where scripts are located
-    SF_ACCOUNT                  = 'YOUR SNOWFLAKE ACCOUNT NAME HERE'        // typically everything that comes before snowflakecomputing.com
-    SF_USER                     = 'YOUR SNOWFLAKE USER ID HERE'
-    SF_ROLE                     = 'NAME OF ROLE HERE'                       // Typically requires create, update, delete privileges
-    SF_WH                       = 'NAME OF YOUR WAREHOUSE HERE'
-    SF_DB                       = 'NAME OF YOUR DATABASE HERE'
-    SF_CH                       = 'NAME OF YOUR CHANGE HISTORY TABLE HERE'
+    SF_ACCOUNT                  = 'ko47437'                                 // typically everything that comes before snowflakecomputing.com
+    SF_USER                     = 'flemmingha'
+    SF_ROLE                     = 'schemachange'                       // Typically requires create, update, delete privileges
+    SF_WH                       = 'schemachange'
+    SF_DB                       = 'schemachange'
+    SF_CH                       = 'schemachange'
     SECRET_LOCATION             = '/home/jenkins/snowflake_pk'              // If you are using a Key Pair Authentication
-    JENKINS_CRED_ID_SECRET_FILE = 'YOUR SECRET FILE JENKINS NAME HERE'      // If you are using a Key Pair Authentication
-    JENKINS_CRED_ID_SECRET      = 'YOUR SECRET PASSWORD JENKINS NAME HERE'  // If you are using a Key Pair Authentication
+    JENKINS_CRED_ID_SECRET_FILE = ''      // If you are using a Key Pair Authentication
+    JENKINS_CRED_ID_SECRET      = ''  // If you are using a Key Pair Authentication
     SCHEMACHANGE                = "${WORKSPACE}/${VIRTUALENV}/lib/${PYTHON_VERSION}/site-packages/schemachange/cli.py"
   }
   stages {
